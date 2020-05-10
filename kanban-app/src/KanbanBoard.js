@@ -1,6 +1,7 @@
 
 import React from 'react';
 import CardList from './CardList';
+import PropTypes from 'prop-types';
 
 export default class KanbanBoard extends React.Component {
     render() {
@@ -12,7 +13,6 @@ export default class KanbanBoard extends React.Component {
         }
         allCards.forEach(card => cards[card.status].push(card));
 
-        
         // if (card.status == 'todo') {
         //     cards.todo.push(card);
         // } else if (card.status == 'todo') {
@@ -28,4 +28,8 @@ export default class KanbanBoard extends React.Component {
                 </div>
         )
     }
+}
+
+KanbanBoard.propTypes = {
+    cards: PropTypes.arrayOf(PropTypes.object).isRequired
 }

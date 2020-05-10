@@ -1,14 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>HIHI</h1>
-    </div>
-  );
+class App extends React.Component {
+    render() {
+        const message = 'Hello React';
+        const h1style = {
+            width: 200,
+            height: 80,
+            padding: 5,
+            color: '#fff',
+            backgroundColor: '#ee9900'
+        };
+        return (
+            <h1 style={h1style}>{message}</h1>
+        );
+    }
 }
 
-export default App;
-
+export {App};
