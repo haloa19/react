@@ -1,150 +1,25 @@
-## 내용 요약
+## React Practices
 <pre>
-[project-ex00]
-ES6 for React
+1) 기본 개념 ([project-ex07) 
+2) Virtual DOM : ReactDOM API
+3) JSX
+4) Component
+ 4-1) Component Styling
+   (1) inline  [project-ex08]
+   (2) hybrid[외부 css 사용(SASS, LESS), Loader를 사용해서 전처리] (CSS파일)
+	- css 번들링 [ex09]
+	- css moudle [ex10]
+	- css processor (SASS, LESS)
 
+ 4-2) working with Form (Controller & Uncontrolled) [project-ex11]
+ 4-3) 속성 Validation : 속성을 제대로 사용하지 않았을 경우 error, default 설정 등
+ 4-4) 상태(stateful) 컴포넌트 vs 순수(pure) component 컴포넌트 작성/중첩
+ 4-5) 데이터 흐름 & 컴포넌트 통신
+ 4-6) Component 생명주기 & Data Fetching (API 서버 사용)
+ 4-7) Immutablity(불변성)
 
-=============================================
-[project-ex01]
-전통적인 DOM API 기반의 앱
-
-npm init -y : project menifest package.json 생성
-
-=============================================
-[project-ex02]
-파일 나눠서 작성해 보기
-
-=============================================
-[project-ex03]
-ES6 모듈 지원 연습
-
-=============================================
-[project-ex04]
-ES6 모듈 지원 기반으로 작성해 보기
-
-=============================================
-[project-ex05]
-번들링
-1. 프로젝트 생성
-    1-1. 프로젝트 디렉토리 생성
-    1-2. src, public, 디렉토리 생성
-2. 매니페스트(package.json) 초기화
-    $ npm init -y
-3. webpack 설치
-    $ npm i -D webpack webpack-cli webpack-dev-server
-    $ npx webpack -v 
-4. webpack 설정(webpack.config.js
-
-const path = require('path');
-
-module.exports = {
-    entry: path.resolve('src/index.js'),
-    output : {
-        path: path.resolve('public'),
-        filename: 'bundle.js'
-    },
-    devServer: {
-        contentBase: path.resolve('public'),
-        host: '0.0.0.0',
-        port: 9999,
-        inline: true,
-        liveReload: true,
-        hot: false,
-        compress: true,
-        historyApiFallback: true
-    }    
-}
-
-5. npm scripting(package.json script안에 명령을 적으면 실행 가능)
-  "scripts": {
-    "build": "npx webpack",
-    "start": "npx webpack-dev-server"
-  }
-================================================================
-[project-ex06]
-1~5 까지는 project-ex05와 동일
-
-6. React Refactoring
-    -- react 라이브러리 패키지 설치
-        $ npm i -D react react-dom
-    -- index.js, App.js 코드 수정
-
-7. 번들링
-    -- Babel 설치
-        $ npm i -D @babel/core babel/loader @babel/preset-env @babel/preset-react    //작동시키는 코어 webpack 플러그인 es6-es7 jsx->javascript
-    -- babel-loader 설정 (webpack.config.js)
-    -- babel 설정(babel.config.json)
-
-=============================================
-[project-ex07] 컴포넌트 구현 & 컴포넌트 속성
-
-1.프로젝트 생성
-    1-1. 프로젝트 디렉토리 생성
-    1-2. src, public 디렉토리 생성
-
-2.매니페스트(package.json) 초기화
-    $ npm init -y
-
-3.패키지 설치
-    $ npm i -D webpack webpack-cli webpack-dev-server react react-dom @babel/core babel-loader @babel/preset-env @babel/preset-react
-
-4.webpack 설정(webpack.config.js)
------------------------------------------
-const path = require('path');
-module.exports = {
-    entry: path.resolve('src/index.js'),
-    output: {
-        path: path.resolve('public'),
-        filename: 'bundle.js'
-    },
-    module: {
-        rules: [{
-            test: /\.js$/,
-            exclude: /node_modules/,
-            loader: 'babel-loader'
-        }]
-    },
-    devServer: {
-        contentBase: path.resolve('public'),
-        host: '0.0.0.0',
-        port: 9999,
-        inline: true,
-        liveReload: true,
-        hot: false,
-        compress: true,
-        historyApiFallback: true
-    }    
-}
------------------------------------------
-
-5. babel 설정(babel.config.json)
------------------------------------------
-{
-    "presets": [["@babel/env",{
-                "targets": {
-                    "ie": "11",
-                    "edge": "80",
-                    "firefox": "73",
-                    "chrome": "82",
-                    "opera": "69",
-                    "safari": "13"
-                }
-            }], "@babel/preset-react"]
-}
------------------------------------------
-
-6. npm scripting : package.json, scripts 섹션 수정
------------------------------------------
-  "scripts": {
-    "build": "npx webpack",
-    "start": "npx webpack-dev-server"
-  }
------------------------------------------
-
-7. 화면 디자인
-
-8. 컴포넌트 작성 + 조합**
-
-9. 속성 + 상태
-
-<pre>
+5) Routing
+6) Flux(Reactive Programming에 있는 기술) : Redux(React.js), WbFlux(Spring), Nuxt(Vue.js)// 데이터 흐름 요청, mvc와 같은 개념
+7) Testing
+8) Performance Tunning
+</pre>

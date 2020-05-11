@@ -1,35 +1,16 @@
-import React, { Fragment, Component } from 'react';    // {} : 개별로 받아오는 방식
+import React, { Fragment } from 'react';
+import './App.css';
+import Banner01 from './Banner01';
+import Banner02 from './Banner02';
 
-class App extends Component {   // form 제어 예제
-    constructor() {
-        super(...arguments);
-        // this.state = {
-        //     loginInfo : {
-        //         email: '',
-        //         password: ''
-        //     }
-        // }
-    }
-
-    onLoginSubmit(event) {
-        event.preventDefault();
-        console.log(event.target.email.value + ":" + event.target.password.value)
-    }
-
+export default class App extends React.Component {
     render() {
         return (
-            <form onSubmit={this.onLoginSubmit}>
-                <div>
-                    e-mail: <input name='email' type='text'/>
-                </div>
-                <br/>
-                <div>
-                    password: <input name='password' type='password' />
-                </div>
-                <button type='submit'>로그인</button>
-            </form>
+            <Fragment>
+                 <Banner01/>
+                 <Banner02/>
+
+            </Fragment>
         );
     }
 }
-
-export {App};

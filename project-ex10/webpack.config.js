@@ -8,9 +8,20 @@ module.exports = {
     },
     module: {
         rules: [{
-            test: /\.js$/,
+            test: /\.js$/i,
             exclude: /node_modules/,
             loader: 'babel-loader'
+        },{
+            test: /\.css$/i,
+            exclude: /node_modules/,
+            loader: [{
+                loader: 'style-loader'
+            }, {
+                loader: 'css-loader',
+                options: {
+                    modules: true
+                }
+            }]
         }]
     },
     devServer: {
