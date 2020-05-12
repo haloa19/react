@@ -9,7 +9,6 @@ export default class App extends React.Component {
             <Fragment>
                  <Banner01/>
                  <Banner02/>
-
             </Fragment>
         );
     }
